@@ -18,10 +18,6 @@ authenticationState = new BehaviorSubject(false);
   user: firebase.UserInfo;
 
   constructor(private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe((user)=>{
-      console.log(user);
-      this.user = user;
-    });
   }
 
 
