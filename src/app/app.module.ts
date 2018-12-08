@@ -16,6 +16,9 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginPageModule } from './login/login.module';
 import { Login2PageModule } from './login2/login2.module';
+import { Login2Page } from './login2/login2.page';
+import { LoginPage } from './login/login.page';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,10 +28,11 @@ import { Login2PageModule } from './login2/login2.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'Ionica'),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     LoginPageModule,
-    Login2PageModule
+    ReactiveFormsModule
+   
   ],
   providers: [
     StatusBar,

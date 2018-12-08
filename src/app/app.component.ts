@@ -23,6 +23,7 @@ export class AppComponent {
       icon: 'list'
     }
   ];
+  rootPage: typeof LoginPage;
 
   constructor(
     private platform: Platform,
@@ -33,7 +34,7 @@ export class AppComponent {
   }
 
   initializeApp() {
-    
+    this.rootPage = LoginPage;
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
