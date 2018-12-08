@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="movies && movies.length > 0"  lines="inset">
+    <ion-item *ngFor="let movie of movies">
+      <ion-label>
+          <p>
+              <strong>
+                 Movie title: {{movie.title}}
+              </strong> 
+           </p>
+      </ion-label>
+      
+      <small> Movie description: {{movie.description}}</small>
+    </ion-item>
+
+  </ion-list>
+  
+</ion-content>

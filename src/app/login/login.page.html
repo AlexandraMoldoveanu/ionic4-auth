@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="login-background"></div>
+  
+    <ion-row padding>
+      <ion-col>
+        <div class="logo" text-center>
+          <img src="assets/logo/logo-white.svg" alt="">
+        </div>
+        <form inlist class="login-form">
+          <ion-item lines="full" autofocus="true">
+            <ion-label position="fixed">Email</ion-label>
+            <ion-input  required type="text"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="fixed">Password</ion-label>
+            <ion-input  required type="password"></ion-input>
+          </ion-item>
+        </form>
+        <ion-button (click)="onLogin()" margin-top fill="clear"  expand="block" text-capitalize class="btn-sign-in">Sign in</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-content>
