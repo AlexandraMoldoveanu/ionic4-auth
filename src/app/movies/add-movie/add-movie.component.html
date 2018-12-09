@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <div class="login-background"></div>
+  
+    <ion-row padding>
+
+      <ion-col>
+        <div class="logo" text-center>
+          <img src="assets/logo/logo-white.svg" alt="">
+        </div>
+        <form inlist class="login-form" [formGroup]="addMovies" (ngSubmit)="onSaveMovie()">
+          <ion-item lines="full" autofocus="true">
+            <ion-label position="fixed">Title</ion-label>
+            <ion-input formControlName="title" required type="text"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="fixed">Desciption</ion-label>
+            <ion-input  formControlName="description"></ion-input>
+          </ion-item>
+          <ion-button color="tertiary" type="submit" margin-top fill="clear"  expand="block" text-capitalize class="btn-sign-in">Save movie</ion-button>
+        </form>
+        
+      </ion-col>
+    </ion-row>
+   
+  </ion-content>

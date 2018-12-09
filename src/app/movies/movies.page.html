@@ -5,19 +5,38 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngIf="movies && movies.length > 0"  lines="inset">
-    <ion-item *ngFor="let movie of movies">
+
+  <ion-list *ngIf="movies && movies.length > 0" lines="inset">
+    <ion-item (dblclick)="deleteMovie($event, movie)" *ngFor="let movie of movies">
       <ion-label>
-          <p>
-              <strong>
-                 Movie title: {{movie.title}}
-              </strong> 
-           </p>
+        <ion-icon (click)="editMovie($event, movie)" name="create" slot="start"></ion-icon>
+        <div *ngIf='editState && movieToEdit.id === movie.id'>
+
+          <form inlist class="login-form" [formGroup]="editMovieForm" (ngSubmit)="onSaveMovie(movie)">
+            <ion-item lines="full" autofocus="true">
+              <ion-label position="fixed">Title</ion-label>
+              <ion-input formControlName="title" required type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label position="fixed">Description</ion-label>
+              <ion-input formControlName="description"></ion-input>
+            </ion-item>
+            <ion-button color="tertiary" type="submit" margin-top fill="clear" expand="block" text-capitalize class="btn-sign-in">Save movie</ion-button>
+          </form>
+        </div>
+        <p>
+          <strong>
+            Movie title: {{movie.title}}
+          </strong>
+        </p>
       </ion-label>
-      
+
       <small> Movie description: {{movie.description}}</small>
+
     </ion-item>
 
   </ion-list>
-  
+  <ion-button routerLink="/movies/add">
+    Add Movie
+  </ion-button>
 </ion-content>
