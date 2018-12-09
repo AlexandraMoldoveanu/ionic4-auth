@@ -15,7 +15,7 @@
         <div class="logo" text-center>
           <img src="assets/logo/logo-white.svg" alt="">
         </div>
-        <form inlist class="login-form" [formGroup]="addMovies" (ngSubmit)="onSaveMovie()">
+        <form inlist class="login-form" [formGroup]="addMovies" (ngSubmit)="onSubmit()">
           <ion-item lines="full" autofocus="true">
             <ion-label position="fixed">Title</ion-label>
             <ion-input formControlName="title" required type="text"></ion-input>

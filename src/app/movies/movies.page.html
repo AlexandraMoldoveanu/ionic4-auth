@@ -7,7 +7,7 @@
 <ion-content padding>
 
   <ion-list *ngIf="movies && movies.length > 0" lines="inset">
-    <ion-item (dblclick)="deleteMovie($event, movie)" *ngFor="let movie of movies">
+    <ion-item  *ngFor="let movie of movies">
       <ion-label>
         <ion-icon (click)="editMovie($event, movie)" name="create" slot="start"></ion-icon>
         <div *ngIf='editState && movieToEdit.id === movie.id'>
@@ -22,6 +22,7 @@
               <ion-input formControlName="description"></ion-input>
             </ion-item>
             <ion-button color="tertiary" type="submit" margin-top fill="clear" expand="block" text-capitalize class="btn-sign-in">Save movie</ion-button>
+            <ion-button (click)="deleteMovie($event, movie)">Deelete</ion-button>
           </form>
         </div>
         <p>
